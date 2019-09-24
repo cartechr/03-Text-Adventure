@@ -1,385 +1,384 @@
 {
-    "verbs": [
-      {
-        "v": "GETUP",
-        "map": "Get-up"
-      },
-      {
-        "v": "GETUP",
-        "map": "get-up"
-      },
-      {
-        "v": "WAKEUP",
-        "map": "Wake-up"
-      },
-      {
-        "v": "WAKEUP",
-        "map": "wake-up"
-      },
-      {
-        "v": "WAKEUP",
-        "map": "Wake Up"
-      },
-      {
-        "v": "SLEEP",
-        "map": "sleep"
-      },
-      {
-        "v": "SLEEP",
-        "map": "Sleep"
-      },
-      {
-        "v": "LEFT",
-        "map": "Go left"
-      },
-      {
-        "v": "LEFT",
-        "map": "Go Left"
-      },
-      {
-        "v": "LEFT",
-        "map": "GOLEFT"
-      },
-      {
-        "v": "LOOKAROUND",
-        "map": "Look Around"
-      },
-      {
-        "v": "LOOKAROUND",
-        "map": "Look around"
-      },
-      {
-        "v": "LOOKAROUND",
-        "map": "look around"
-      },
-      {
-        "v": "LOOKAROUND",
-        "map": "LOOK AROUND"
-      },
-      {
-        "v": "PICKUP",
-        "map": "Pick Up Stick"
-      },
-      {
-        "v": "PICKUP",
-        "map": "Pick up stick"
-      },
-      {
-        "v": "PICKUP",
-        "map": "PICK UP STICK"
-      },
-      {
-        "v": "GOINTOSHACK",
-        "map": "Go Into Shack"
-      },
-      {
-        "v": "GOINTOSHACK",
-        "map": "Go into shack"
-      },
-      {
-        "v": "GOINTOSHACK",
-        "map": "GO INTO SHACK"
-      },
-      {
-        "v": "PICKUPMALLET",
-        "map": "Pick up mallet"
-      },
-      {
-        "v": "PICKUPMALLET",
-        "map": "Pick Up Mallet"
-      },
-      {
-        "v": "PICKUPMALLET",
-        "map": "PICK UP MALLET"
-      },
-      {
-        "v": "LEAVESHACK",
-        "map": "Leave Shack"
-      },
-      {
-        "v": "LEAVESHACK",
-        "map": "leave shack"
-      },
-      {
-        "v": "LEAVESHACK",
-        "map": "LEAVE SHACK"
-      },
-      {
-        "v": "CREATEMALLET",
-        "map": "Make Mallet"
-      },
-      {
-        "v": "CREATEMALLET",
-        "map": "Create Mallet"
-      },
-      {
-        "v": "BREAKWALL",
-        "map": "Use mallet"
-      },
-      {
-        "v": "BREAKWALL",
-        "map": "Break wall"
-      },
-      {
-        "v": "GOTHROUGH",
-        "map": "Go through"
-      },
-      {
-        "v": "GOTHROUGH",
-        "map": "Go forward"
-      },
-      {
-        "v": "KEEPWALKING",
-        "map": "keep walking"
-      },
-      {
-        "v": "KEEPWALKING",
-        "map": "Walk forward"
-      },
-      {
-        "v": "PUTMALLETDOWN",
-        "map": "put down mallet"
-      },
-      {
-        "v": "PUTMALLETDOWN",
-        "map": "drop mallet"
-      },
-      {
-        "v": "UP",
-        "map": "Go forward"
-      },
-      {
-        "v": "UP",
-        "map": "Walk forward"
-      },
-      {
-        "v": "EXIT",
-        "map": "Exit"
-      },
-      {
-        "v": "EXIT",
-        "map": "exit"
-      },
-      {
-        "v": "EXIT",
-        "map": "EXIT"
-      }
-    ],
-    "rooms": {
-      "Start": {
-        "name": "(You have just started the game)",
-        "desc": "You are asleep in a tent. While you are sleeping, you experience a dream or vision of some sort. In the dream, you are standing inside some building, and then suddenly a bunch of locusts burst into the house windows.",
-        "exits": [
-          {
-            "verb": "WAKEUP",
-            "target": "wake up",
-            "condition": ""
-          },
-          {
-            "verb": "SLEEP",
-            "target": "Sleep (Beginning)",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      }, 
-
-      "Sleep (Beginning)": {
-        "name": " ",
-        "desc": "You are already sleeping",
-        "exits":[
-          {
-            "verb": "WAKEUP",
-            "target": "wake up",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-
-      "wake up": {
-        "name": " ",
-        "desc": "You are now awake",
-        "exits":[
-          {
-            "verb": "GETUP",
-            "target": "Get-up",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-
-      "Get-up": {
-        "name": " ",
-        "desc": "You are now standing",
-        "exits":[
-          {
-            "verb": "EXIT",
-            "target": "Exit",
-            "condition": ""
-          },
-          {
-            "verb": "Exit",
-            "target": "Exit",
-            "condition": ""
-          }
-        ],
-
-        "inventory": []
-      },
-
-      "Exit": {
-        "name": " ",
-        "desc": "You walk out of the tent only to see a vast desert. You do not remember how you got there or who you even are. You end up spotting some structures to your left.",
-        "exits":[
-          {
-            "verb": "LEFT",
-            "target": "Structures",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "Structures": {
-        "name": " ",
-        "desc": "In front of you is a wall with a big crack running through a part of it. Maybe you could use something to break it.",
-        "exits":[
-          {
-            "verb": "LOOKAROUND",
-            "target": "Look_Around",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "Look_Around": {
-        "name": " ",
-        "desc": "To your right on the ground you see a medium sized stick. To your left you see a small shack",
-        "exits":[
-          {
-            "verb": "PICKUP",
-            "target": "STICK-",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "STICK-": {
-        "name": " ",
-        "desc": "You picked up the stick.",
-        "exits":[
-          {
-            "verb": "GOINTOSHACK",
-            "target": "SHACK-",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "SHACK-": {
-        "name": " ",
-        "desc": "On the floor is the top of a mallet.",
-        "exits":[
-          {
-            "verb": "PICKUPMALLET",
-            "target": "Mallet",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "Mallet": {
-        "name": " ",
-        "desc": "You picked up the mallet",
-        "exits":[
-          {
-            "verb": "LEAVESHACK",
-            "target": "LEAVESHACK-",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "LEAVESHACK-": {
-        "name": " ",
-        "desc": "You are back outside",
-        "exits":[
-          {
-            "verb": "CREATEMALLET",
-            "target": "create_mallet",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "create_mallet": {
-        "name": " ",
-        "desc": "You are now able to use the mallet",
-        "exits":[
-          {
-            "verb": "BREAKWALL",
-            "target": "break_wall",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "break_mall": {
-        "name": " ",
-        "desc": "A large whole was left in the wall. ",
-        "exits":[
-          {
-            "verb": "GOTHROUGH",
-            "target": "Go_through",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "Go_through": {
-        "name": " ",
-        "desc": "On the other side of the wall is more sand and what looks like house nearby. \n (The mallet is too heavy to carry any further.)",
-        "exits":[
-          {
-            "verb": "KEEPWALKING",
-            "target": "Keep_Walking",
-            "condition": ""
-          },
-          {
-            "verb": "PUTMALLETDOWN",
-            "target": "Put_Mallet_Down",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "Keep_Walking": {
-        "name": " ",
-        "desc": "You have fallen through the sand and died.\n (Game Over)",
-        "exits":[
-        ],
-        "inventory": []
-      },
-      "Put_Mallet_Down": {
-        "name": " ",
-        "desc": "You dropped the mallet onto the ground",
-        "exits":[
-          {
-            "verb": "UP",
-            "target": "Forward",
-            "condition": ""
-          }
-        ],
-        "inventory": []
-      },
-      "Forward": {
-        "name": " ",
-        "desc": "While walking, something or someone had knocked you out, and you were left unconscious... \n (To Be Continued)",
-        "exits":[
-        ],
-        "inventory": []
-      }
+  "verbs": [
+    {
+      "v": "GETUP",
+      "map": "Get-up"
+    },
+    {
+      "v": "GETUP",
+      "map": "get-up"
+    },
+    {
+      "v": "WAKEUP",
+      "map": "Wake-up"
+    },
+    {
+      "v": "WAKEUP",
+      "map": "wake-up"
+    },
+    {
+      "v": "WAKEUP",
+      "map": "Wake Up"
+    },
+    {
+      "v": "SLEEP",
+      "map": "sleep"
+    },
+    {
+      "v": "SLEEP",
+      "map": "Sleep"
+    },
+    {
+      "v": "LEFT",
+      "map": "Go left"
+    },
+    {
+      "v": "LEFT",
+      "map": "Go Left"
+    },
+    {
+      "v": "LEFT",
+      "map": "GOLEFT"
+    },
+    {
+      "v": "LOOKAROUND",
+      "map": "Look Around"
+    },
+    {
+      "v": "LOOKAROUND",
+      "map": "Look around"
+    },
+    {
+      "v": "LOOKAROUND",
+      "map": "look around"
+    },
+    {
+      "v": "LOOKAROUND",
+      "map": "LOOK AROUND"
+    },
+    {
+      "v": "PICKUP",
+      "map": "Pick Up Stick"
+    },
+    {
+      "v": "PICKUP",
+      "map": "Pick up stick"
+    },
+    {
+      "v": "PICKUP",
+      "map": "PICK UP STICK"
+    },
+    {
+      "v": "GOINTOSHACK",
+      "map": "Go Into Shack"
+    },
+    {
+      "v": "GOINTOSHACK",
+      "map": "Go into shack"
+    },
+    {
+      "v": "GOINTOSHACK",
+      "map": "GO INTO SHACK"
+    },
+    {
+      "v": "PICKMALLET",
+      "map": "Pick up mallet"
+    },
+    {
+      "v": "PICKMALLET",
+      "map": "Pick Up Mallet"
+    },
+    {
+      "v": "PICKMALLET",
+      "map": "PICK UP MALLET"
+    },
+    {
+      "v": "LEAVESHACK",
+      "map": "Leave Shack"
+    },
+    {
+      "v": "LEAVESHACK",
+      "map": "leave shack"
+    },
+    {
+      "v": "LEAVESHACK",
+      "map": "LEAVE SHACK"
+    },
+    {
+      "v": "CREATEMALLET",
+      "map": "Make Mallet"
+    },
+    {
+      "v": "CREATEMALLET",
+      "map": "Create Mallet"
+    },
+    {
+      "v": "BREAKWALL",
+      "map": "Use mallet"
+    },
+    {
+      "v": "BREAKWALL",
+      "map": "Break wall"
+    },
+    {
+      "v": "GOTHROUGH",
+      "map": "Go through"
+    },
+    {
+      "v": "GOTHROUGH",
+      "map": "Go forward"
+    },
+    {
+      "v": "KEEPWALKING",
+      "map": "keep walking"
+    },
+    {
+      "v": "KEEPWALKING",
+      "map": "Walk forward"
+    },
+    {
+      "v": "PUTMALLETDOWN",
+      "map": "put down mallet"
+    },
+    {
+      "v": "PUTMALLETDOWN",
+      "map": "drop mallet"
+    },
+    {
+      "v": "UP",
+      "map": "Go forward"
+    },
+    {
+      "v": "UP",
+      "map": "Walk forward"
+    },
+    {
+      "v": "EXIT",
+      "map": "Exit"
+    },
+    {
+      "v": "EXIT",
+      "map": "exit"
+    },
+    {
+      "v": "EXIT",
+      "map": "EXIT"
     }
+  ],
+  "rooms": {
+    "Start": {
+      "name": "(You have just started the game)",
+      "desc": "You are asleep in a tent. While you are sleeping, you experience a dream or vision of some sort. In the dream, you are standing inside some building, and then suddenly a bunch of locusts burst into the house windows.",
+      "exits": [
+        {
+          "verb": "WAKEUP",
+          "target": "wake up",
+          "condition": ""
+        },
+        {
+          "verb": "SLEEP",
+          "target": "Sleep (Beginning)",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    }, 
+
+    "Sleep (Beginning)": {
+      "name": " ",
+      "desc": "You are already sleeping",
+      "exits":[
+        {
+          "verb": "WAKEUP",
+          "target": "wake up",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+
+    "wake up": {
+      "name": " ",
+      "desc": "You are now awake",
+      "exits":[
+        {
+          "verb": "GETUP",
+          "target": "Get-up",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+
+    "Get-up": {
+      "name": " ",
+      "desc": "You are now standing",
+      "exits":[
+        {
+          "verb": "EXIT",
+          "target": "Exit",
+          "condition": ""
+        },
+        {
+          "verb": "Exit",
+          "target": "Exit",
+          "condition": ""
+        }
+      ],
+
+      "inventory": []
+    },
+
+    "Exit": {
+      "name": " ",
+      "desc": "You walk out of the tent only to see a vast desert. You do not remember how you got there or who you even are. You end up spotting some structures to your left.",
+      "exits":[
+        {
+          "verb": "LEFT",
+          "target": "Structures",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Structures": {
+      "name": " ",
+      "desc": "In front of you is a wall with a big crack running through a part of it. Maybe you could use something to break it.",
+      "exits":[
+        {
+          "verb": "LOOKAROUND",
+          "target": "Look_Around",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Look_Around": {
+      "name": " ",
+      "desc": "To your right on the ground you see a medium sized stick. To your left you see a small shack",
+      "exits":[
+        {
+          "verb": "PICKUP",
+          "target": "Pickup",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Pickup": {
+      "name": " ",
+      "desc": "You picked up the stick.",
+      "exits":[
+        {
+          "verb": "GOINTOSHACK",
+          "target": "SHACK-",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "SHACK-": {
+      "name": " ",
+      "desc": "On the floor is the top of a mallet.",
+      "exits":[
+        {
+          "verb": "PICKMALLET",
+          "target": "Mallet",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Mallet": {
+      "name": " ",
+      "desc": "You picked up the mallet",
+      "exits":[
+        {
+          "verb": "LEAVESHACK",
+          "target": "LEAVESHACK-",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "LEAVESHACK-": {
+      "name": " ",
+      "desc": "You are back outside",
+      "exits":[
+        {
+          "verb": "CREATEMALLET",
+          "target": "create_mallet",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "create_mallet": {
+      "name": " ",
+      "desc": "You are now able to use the mallet",
+      "exits":[
+        {
+          "verb": "BREAKWALL",
+          "target": "break_wall",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "break_wall": {
+      "name": " ",
+      "desc": "A large whole was left in the wall. ",
+      "exits":[
+        {
+          "verb": "GOTHROUGH",
+          "target": "Go_through",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Go_through": {
+      "name": " ",
+      "desc": "On the other side of the wall is more sand and what looks like house nearby. \n (The mallet is too heavy to carry any further.)",
+      "exits":[
+        {
+          "verb": "KEEPWALKING",
+          "target": "Keep_Walking",
+          "condition": ""
+        },
+        {
+          "verb": "PUTMALLETDOWN",
+          "target": "Put_Mallet_Down",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Keep_Walking": {
+      "name": " ",
+      "desc": "You have fallen through the sand and died.\n (Game Over)",
+      "exits":[
+      ],
+      "inventory": []
+    },
+    "Put_Mallet_Down": {
+      "name": " ",
+      "desc": "You dropped the mallet onto the ground",
+      "exits":[
+        {
+          "verb": "UP",
+          "target": "Forward",
+          "condition": ""
+        }
+      ],
+      "inventory": []
+    },
+    "Forward": {
+      "name": " ",
+      "desc": "While walking, something or someone had knocked you out, and you were left unconscious... \n (To Be Continued)",
+      "exits":[
+      ],
+      "inventory": []
+    }
+  }
 }
-  
